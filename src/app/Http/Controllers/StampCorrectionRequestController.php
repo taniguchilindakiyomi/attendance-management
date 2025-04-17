@@ -22,7 +22,7 @@ class StampCorrectionRequestController extends Controller
         return view('/admin/request/list', compact('requests', 'status'));
     }
 
-    if (Auth::guard('web')->check()) {
+        if (Auth::guard('web')->check()) {
             $user = Auth::guard('web')->user();
             $status = $request->query('status', 'pending');
 
@@ -34,7 +34,6 @@ class StampCorrectionRequestController extends Controller
             return view('request/list', compact('requests', 'status'));
         }
 
-        // どちらにもログインしてない場合
         return redirect('/login');
     }
 

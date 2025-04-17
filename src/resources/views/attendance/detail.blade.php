@@ -28,7 +28,6 @@
 @if(!$stampRequest)
         <form action="/attendance/{{ $attendance->id }}" method="post">
             @csrf
-            @method('PUT')
             <input type="hidden" name="attendance_id" value="{{ $attendance->id }}">
             <table class="table">
             <tr>
@@ -75,9 +74,9 @@
 
         @if($attendance->breaks->count() >= 2)
             <div>
-                <input type="time" name="requested_break_start" value="{{ old('requested_breaks.new.start') }}">
+                <input class="input" type="time" name="requested_break_start" value="{{ old('requested_breaks.new.start') }}">
                 <span class="separator">〜</span>
-                <input type="time" name="requested_break_end" value="{{ old('requested_breaks.new.end') }}">
+                <input class="input" type="time" name="requested_break_end" value="{{ old('requested_breaks.new.end') }}">
 
                 <div class="form-error">
                 @error('requested_break_start')
