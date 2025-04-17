@@ -46,6 +46,9 @@ Route::middleware(['auth:web', 'user'])->group(function () {
 
 Route::middleware(['auth:admin', 'admin'])->group(function () {
 
+    Route::get('/admin/attendance/list', [AdminController::class, 'attendanceList']);
+
+
     Route::get('/admin/staff/list', [AdminController::class, 'staffAttendanceList']);
 
     Route::get('/admin/attendance/{id}', [AdminController::class, 'detailAdmin']);
@@ -53,9 +56,6 @@ Route::middleware(['auth:admin', 'admin'])->group(function () {
 
     Route::get('/stamp_correction_request/approve/{id}', [AdminController::class, 'getApprove']);
     Route::post('/stamp_correction_request/approve/{id}', [AdminController::class, 'postApprove']);
-
-
-    Route::get('/admin/attendance/list', [AdminController::class, 'attendanceList']);
 
 
     Route::get('/admin/attendance/staff/{id}', [AdminController::class, 'monthlyAttendance']);
