@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\User;
+use App\Models\Admin;
 use Illuminate\Support\Facades\Hash;
 
 class AdminSeeder extends Seeder
@@ -15,11 +15,10 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
+        Admin::create([
             'name' => '管理者ユーザー',
             'email' => 'test@icloud.com',
             'password' => Hash::make('kkkkkkkk'),
-            'role' => 'admin',
         ]);
     }
 }
