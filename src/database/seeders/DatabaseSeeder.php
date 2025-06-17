@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             AdminSeeder::class,
             AttendanceSeeder::class,
-            StampCorrectionRequestSeeder::class,
         ]);
     }
 }
